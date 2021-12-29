@@ -38,23 +38,11 @@
             border-color: #246879;
             
         }
-        .contacts-card{
+        .chsbackground {
             background-color: #9ad5e3;
-        }
-        .timetable{
-            background-color: #9ad5e3;
-            background-position: 0px 30px;
-        }
-        .contacts{
-            background-color: #9ad5e3;
-        }
-        .calc{
-            background-color: #9ad5e3;
-            
         }
         .intro{
             background-image: url('{{ asset('images/wide.jpg') }}');
-            background-color: #9ad5e3;
             background-repeat: no-repeat;
             margin-top: 3%;
         }

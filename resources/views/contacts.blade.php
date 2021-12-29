@@ -88,7 +88,7 @@
         <div class="col-md-8 ">
             
             <div class="row">
-                <div class="card contacts-card m-2">
+                <div class="card chsbackground m-2">
                     <h5 class="card-header">{{ $contact->name }}</h5>
                     <div class="card-body row">
                       <h5 class="card-title col-md-6">{{ $contact->department }}</h5>
