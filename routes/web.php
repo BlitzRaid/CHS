@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +22,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/contacts', 'App\Http\Controllers\ContactsController@search')->name('web.search');
 Route::post('/store', 'App\Http\Controllers\ContactsController@store')->name('store.prof');
 Route::get('/', 'App\Http\Controllers\HomeController@index');
-Route::get('/email', 'App\Http\Controllers\ContactController@index')->name('emailForm');
+Route::get('/email/{id}', [ContactController::class, 'index'])->name('emailForm');
 Route::post('/send', 'App\Http\Controllers\ContactController@send')->name('send.email');
-Route::get('/calc', 'App\Http\Controllers\CalcController@index');
-Route::get('/timetable', 'App\Http\Controllers\TimetableController@index');
-
+Route::get('/calc', 'App\Http\Controllers\CalcController@index')->name('calc');
+Route::get('/timetable', 'App\Http\Controllers\TimetableController@index')->name('timetable');
 
 
 

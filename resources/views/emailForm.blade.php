@@ -5,6 +5,10 @@
         <h1>send an email to your professor</h1>
 
         <form action="{{ route('send.email') }}" method="POST">
+
+            <p>
+                
+            </p>
             @csrf
 
             @if (Session::has('error'))
@@ -18,7 +22,12 @@
                 {{ Session::get('success') }}
             </div>    
             @endif
-            
+            <div class="form-group">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Professor's Email:</label>
+                <div class="col-sm-10">
+                  <input type="text" name="targetemail" readonly class="form-control-plaintext" id="staticEmail" value="{{ $targetemail }}">
+                </div>
+              </div>
             <div class="form-group">
                 <label for="">Your Name</label>
                 <input type="text" class="form-control" name="name" value="{{ old('name') }}">
@@ -28,7 +37,7 @@
             </div>
             <div class="form-group">
                 <label for="">Your Email</label>
-                <input type="text" class="form-control" name="email" value="{{ old('email') }}">
+                <input type="text" class="form-control" name="email" ">
                 @error('email')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror   

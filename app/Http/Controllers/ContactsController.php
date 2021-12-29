@@ -13,13 +13,6 @@ use App\Models\Contacts;
 class ContactsController extends Controller
 {
     //this function is redundant at this point
-    public function index()
-    {
-        return view('contacts',[
-            'contacts' => DB::table('contacts')->paginate(5)
-        ]);
-        
-    }
     public function search(Request $request)
     {
         if(isset($_GET['query'])){

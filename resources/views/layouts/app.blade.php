@@ -68,13 +68,13 @@
                   <a class="nav-link {{ request()->is('/') ? 'active' :'' }}" href="/" ><i class="fa fa-home"></i>Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                  <a class="nav-link {{ request()->is('calc') ? 'active' :'' }}" href="calc"><i class="fa fa-calculator"></i>Calculator</a>
+                  <a class="nav-link {{ request()->is('calc') ? 'active' :'' }}" href="{{ route('calc') }}"><i class="fa fa-calculator"></i>Calculator</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link {{ request()->is('contacts') ? 'active' :'' }}{{ request()->is('search') ? 'active' :'' }}" href="contacts"><i class="fa fa-user"></i>Contacts</a>
+                  <a class="nav-link {{ request()->is('contacts') ? 'active' :'' }}{{ request()->is('search') ? 'active' :'' }}" href="{{ route('web.search') }}"><i class="fa fa-user"></i>Contacts</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('timetable') ? 'active' :'' }}" href="timetable"><i class="fa fa-table"></i>Timetable</a>
+                    <a class="nav-link {{ request()->is('timetable') ? 'active' :'' }}" href="{{ route('timetable') }}"><i class="fa fa-table"></i>Timetable</a>
                 </li>
               </ul>
               <ul class="navbar-nav ms-auto">

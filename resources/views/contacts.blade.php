@@ -25,8 +25,8 @@
 @if (Auth::user())
   <div class="justify-content-md-center row" >
     <div class="col-md-8">
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <!-- profButton trigger modal -->
+      <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#AddProfessorModal">
         Add new Professor
       </button>
 
@@ -42,12 +42,12 @@
       </div>    
       @endif
 
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <!-- profModal -->
+      <div class="modal fade" id="AddProfessorModal" tabindex="-2"aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Add a new professor</h5>
+              <h5 class="modal-title">Add a new professor</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="{{ route('store.prof') }}" method="POST">
@@ -81,6 +81,7 @@
   </div>
 @endif
 
+
 @if (count($contacts)> 0)
  
   @foreach ($contacts as $contact)
@@ -94,7 +95,8 @@
                       <h5 class="card-title col-md-6">{{ $contact->department }}</h5>
                       <h5 class="card-text col-md-6">Additional info:</h5>
                       <p class="card-text col-md-10">{{ $contact->email }}</p>
-                      <a href="{{ route('emailForm') }}" class="btn btn-primary col-md-2">Email now</a>
+                      
+                      <a href="" class="btn btn-primary col-md-2">Email now</a>
                     </div>
                   </div>
                   <br>

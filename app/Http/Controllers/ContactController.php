@@ -2,13 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\DB;
 
 class ContactController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        return view('emailForm');
+        $contacts = DB::table('contacts')
+                    ->where('id', $id)
+                    ->get()
+                ;
+        foreach ($contacts as $contact) {
+            $targetemail = $contact->email;
+        }
+        //could be done better without the foreach loop, need to know how
+        return view('emailForm')->with('targetemail', $targetemail);
     }
     public function send(Request $request)
     {
