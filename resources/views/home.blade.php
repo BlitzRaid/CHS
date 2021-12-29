@@ -34,7 +34,7 @@
             <div class="card shadow-lg p-3 mb-5 chsbackground" style="width: 18rem;">
                 <div class="card-body">
                   <h5 class="card-title">GPA calculator</h5>
-                  <p class="card-text">This calculator will help you identify and calculate crucial metrics regarding your grads and GPA, 
+                  <p class="card-text">This calculator will help you identify and calculate crucial metrics regarding your grades and GPA, 
                       it can also help you determine a minmum required grade to achieve a certain GPA.
                   </p>
                   <strong><a href="calc" class="card-link">Try it now!</a></strong>

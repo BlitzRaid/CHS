@@ -20,6 +20,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/contacts', 'App\Http\Controllers\ContactsController@search')->name('web.search');
+Route::get('/contacts/delete/{id}', 'App\Http\Controllers\ContactsController@delete')->name('delete');
 Route::post('/store', 'App\Http\Controllers\ContactsController@store')->name('store.prof');
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 Route::get('/email/{id}', [ContactController::class, 'index'])->name('emailForm');

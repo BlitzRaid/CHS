@@ -48,4 +48,9 @@ class ContactsController extends Controller
         return redirect('contacts')->with('success', 'professor added succefully');
 
     }
+    public function delete($id)
+    {
+        DB::table('contacts')->where('id', $id)->delete();
+        return redirect('contacts')->with('success', 'deleted succcesffuly');
+    }
 }

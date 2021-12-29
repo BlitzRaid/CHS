@@ -66,7 +66,13 @@
                 </div>
                 <div class="form-group">
                   <label>Professor Department</label>
-                  <input class="form-control"  name="department"  placeholder="enter department">
+                  <select id="inputState" name="department" class="form-select">
+                    <option selected>Electrical and Mechanical</option>
+                    <option>Computer and communication</option>
+                    <option>Offshore</option>
+                    <option>Civil</option>
+                    <option>Production</option>
+                  </select>
                 </div>  
             </div>
             <div class="modal-footer">
@@ -82,9 +88,30 @@
 @endif
 
 
+
+
 @if (count($contacts)> 0)
  
   @foreach ($contacts as $contact)
+    <!-- delete confiramtion modal -->
+      <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Warning!</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              You are about to delete professor {{ $contact->name }} PERMANENTLY, are you sure you want to continue?
+            </div>
+            <div class="modal-footer">
+              <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</a>
+              <a type="button" href="{{ route('delete', $contact->id) }}" class="btn btn-danger">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{-- end of delete confimation modal --}}
     <div class="justify-content-md-center row">
         <div class="col-md-8 ">
             
@@ -96,7 +123,13 @@
                       <h5 class="card-text col-md-6">Additional info:</h5>
                       <p class="card-text col-md-10">{{ $contact->email }}</p>
                       
-                      <a href="" class="btn btn-primary col-md-2">Email now</a>
+                      <a href="{{ route('emailForm', $contact->id) }}" class="btn btn-primary col-md-2">Email now</a>
+                      @if (Auth::user())
+                        <a href="" class="btn btn-success col-md-2 m-2 mb-0">Edit</a>
+                        <a type="button" class="btn btn-danger col-md-2 m-2 mb-0" data-bs-toggle="modal" data-bs-target="#confirmModal">
+                          Delete
+                        </a>
+                      @endif
                     </div>
                   </div>
                   <br>
