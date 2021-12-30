@@ -49,16 +49,16 @@
         body{
             background-color: #6ba3b0;
         }
+        .small-text{
+            font-size: 0.45em;
+        }
     </style>
     
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light  navcus  shadow-lg ">
-            <a class="navbar-brand" href="#">
-                <img src="{{ asset('images/logo.png') }}" width="30" height="30" alt="">
-              </a>
-            <a class="navbar-brand" href="#">CHS</a>
+            <a class="navbar-brand m-1" href="{{ route('home') }}">CHS</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>

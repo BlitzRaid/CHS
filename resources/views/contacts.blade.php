@@ -119,16 +119,23 @@
                 <div class="card chsbackground m-2">
                     <h5 class="card-header">{{ $contact->name }}</h5>
                     <div class="card-body row">
-                      <h5 class="card-title col-md-6">{{ $contact->department }}</h5>
-                      <h5 class="card-text col-md-6">Additional info:</h5>
-                      <p class="card-text col-md-10">{{ $contact->email }}</p>
+                      <div class="row">
+                        <h5 class="card-title col-md-6">Department: {{ $contact->department }}</h5>
+                        <h6 class="card-text col-md-6"><strong>Additional info:</strong> {{ $contact->info }}</h6>
+                      </div>
+                      <div class="row">
+                        <h5 class="card-text col-md-6">Email: {{ $contact->email }}</h5>
+                        <a href="{{ route('emailForm', $contact->id) }}" class="btn btn-primary col-md-2 mt-2">Email now</a>
+                      </div>
                       
-                      <a href="{{ route('emailForm', $contact->id) }}" class="btn btn-primary col-md-2">Email now</a>
+
                       @if (Auth::user())
+                      <div class="row">
                         <a href="" class="btn btn-success col-md-2 m-2 mb-0">Edit</a>
                         <a type="button" class="btn btn-danger col-md-2 m-2 mb-0" data-bs-toggle="modal" data-bs-target="#confirmModal">
                           Delete
                         </a>
+                      </div>
                       @endif
                     </div>
                   </div>

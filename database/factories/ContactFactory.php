@@ -19,6 +19,7 @@ class ContactFactory extends Factory
             'name' => $this->faker->title(),
             'email' => $this->faker->unique()->safeEmail(),
             'department' =>$this->faker->title(),
+            'info' =>$this->faker->paragraph(),
             'created_at' => now(),
         ];
     }

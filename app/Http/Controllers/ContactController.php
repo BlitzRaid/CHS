@@ -31,7 +31,7 @@ class ContactController extends Controller
         ]);
         if($this->isonline()){
             $mail_data = [
-                'recipient'=>'realblitzraid@gmail.com',
+                'recipient'=>$request->targetemail,
                 'fromemail'=>$request->email,
                 'fromname'=>$request->name,
                 'subject'=>$request->subject,
