@@ -12,7 +12,7 @@
       </div>
       <div class="form-group">
         <button type="submit" class=" m-1 btn btn-primary col-md-2"><strong>Search</strong></button>
-      </div>
+      </div>  
     </form>
   </div>
 </div>
@@ -65,6 +65,11 @@
                   <input type="email" class="form-control"  name="email"  placeholder="enter email">
                 </div>
                 <div class="form-group">
+                  <div class="form-group">
+                    <label>Additional info</label>
+                    <input class="form-control" name="info" placeholder="Enter Info">
+                    
+                  </div>
                   <label>Professor Department</label>
                   <select id="inputState" name="department" class="form-select">
                     <option selected>Electrical and Mechanical</option>

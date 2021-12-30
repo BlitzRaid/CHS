@@ -4,7 +4,7 @@
     <div class="justify-content-center row">
         <div class="col-md-8">
             <h1>Send an Email to your professor <div class="small-text">or go back to all contacts <a href="{{ route('web.search') }}">here</a></div></h1>
-            <h5>NOTE! this email will be sent from the CHS official email, your professor cannot reply to you unless you provide your email.</h5>
+            <h5 class="text-danger">NOTE! this email will be sent from the CHS official email, your professor cannot reply to you unless you provide your email.</h5>
 
         <form action="{{ route('send.email') }}" method="POST">
 

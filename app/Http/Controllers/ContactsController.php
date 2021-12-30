@@ -42,6 +42,7 @@ class ContactsController extends Controller
         $cont = new Contact();
         $cont -> name = $request->input('name');
         $cont -> email = $request->input('email');
+        $cont -> info = $request->input('info');
         $cont -> department = $request->input('department');
 
         $cont ->save();
