@@ -10,9 +10,20 @@
         <label for="">Enter Professor name</label>
         <input type="text" class="form-control" name="query" placeholder="Search here....">
       </div>
-      <div class="form-group">
-        <button type="submit" class=" m-1 btn btn-primary col-md-2"><strong>Search</strong></button>
+      <div class="col-md-3">.
+        <select class="form-select" name="department" >
+          <option selected>No Department</option>
+          <option>Electrical and Mechanical</option>
+          <option>Computer and communication</option>
+          <option>Offshore</option>
+          <option>Civil</option>
+          <option>Production</option>
+        </select>
       </div>  
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary col-md-3"><strong>Search</strong></button>
+      </div>
+      
     </form>
   </div>
 </div>

@@ -15,9 +15,15 @@ class ContactsController extends Controller
     //this function is redundant at this point
     public function search(Request $request)
     {
-        if(isset($_GET['query'])){
-            $search_text = $_GET['query'];
-            $contacts = DB::table('contacts')->where('name','like','%'.$search_text.'%')->paginate(4);
+        if(isset($_GET['searchname'])){
+            $search_text = $_GET['searchname'];
+            $department = $request->department;
+            if ($request->department != 'No Department'){
+                $contacts = DB::table('contacts')->where('name','like','%'.$search_text.'%')->where('department','like','%'.$department.'%')->orderBy('name', 'desc')->paginate(4);
+            }
+            else {
+                $contacts = DB::table('contacts')->where('name','like','%'.$search_text.'%')->orderBy('name', 'desc')->paginate(4);
+            }
             $contacts ->appends($request->all()) ;
             return view('contacts',[
                 'contacts'=>$contacts,
