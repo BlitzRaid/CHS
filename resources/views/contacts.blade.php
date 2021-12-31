@@ -83,7 +83,7 @@
                   </div>
                   <label>Professor Department</label>
                   <select id="inputState" name="department" class="form-select">
-                    <option selected>Electrical and Mechanical</option>
+                    <option value="NULL" selected>Electrical and Mechanical</option>
                     <option>Computer and communication</option>
                     <option>Offshore</option>
                     <option>Civil</option>
@@ -128,6 +128,54 @@
         </div>
       </div>
       {{-- end of delete confimation modal --}}
+      <!-- edit contact modal -->
+      <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="{{ route('edit', $contact->id) }}" method="POST">
+                  @csrf
+                <div class="form-group">
+                  <input  name="cid" value="{{ $contact->id }}" type="hidden">
+                  <label>Professor name</label>
+                  <input class="form-control" name="name" placeholder="Enter name" value="{{ $contact->name }}">
+                  
+                </div>
+                <div class="form-group">
+                  <label>Professor Email</label>
+                  <input type="email" class="form-control"  name="email"  placeholder="enter email" value="{{ $contact->email }}">
+                </div>
+                <div class="form-group">
+                  <div class="form-group">
+                    <label>Additional info</label>
+                    <input class="form-control" name="info" placeholder="Enter Info" value="{{ $contact->info }}">
+                    
+                  </div>
+                  <label>Professor Department</label>
+                  <select id="inputState" name="department" class="form-select" >
+                    <option readonly selected>choose department</option>
+                    <option>Electrical and Mechanical</option>
+                    <option>Computer and communication</option>
+                    <option>Offshore</option>
+                    <option>Civil</option>
+                    <option>Production</option>
+                  </select>
+                </div>  
+            </div>
+              <div class="modal-footer">
+                <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</a>
+                <button type="submit" class="btn btn-primary">Edit</button>
+              </div>
+          </form>
+
+          </div>
+        </div>
+      </div>
+      {{-- end of edit contact modal --}}
     <div class="justify-content-md-center row">
         <div class="col-md-8 ">
             
@@ -147,7 +195,9 @@
 
                       @if (Auth::user())
                       <div class="row">
-                        <a href="" class="btn btn-success col-md-2 m-2 mb-0">Edit</a>
+                        <a type="button" class="btn btn-success col-md-2 m-2 mb-0" data-bs-toggle="modal" data-bs-target="#editModal">
+                          Edit
+                        </a>
                         <a type="button" class="btn btn-danger col-md-2 m-2 mb-0" data-bs-toggle="modal" data-bs-target="#confirmModal">
                           Delete
                         </a>

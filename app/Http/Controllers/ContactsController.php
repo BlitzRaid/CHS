@@ -31,7 +31,7 @@ class ContactsController extends Controller
             ]);
         }else{
             return view('contacts',[
-                'contacts' => DB::table('contacts')->paginate(4)
+                'contacts' => DB::table('contacts')->orderBy('name', 'desc')->paginate(4)
             ]);
         }
         
@@ -58,10 +58,34 @@ class ContactsController extends Controller
     public function delete($id)
     {
         DB::table('contacts')->where('id', $id)->delete();
-        return redirect('contacts')->with('success', 'deleted succcesffuly');
+        return redirect('contacts')->with('success', 'deleted successfully');
     }
-    public function edit($id, Request $request)
+    public function edit(Request $request)
     {
         
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'department'=>'required',
+        ]);
+
+        
+        
+        if ($request->input('department') == 'choose department')
+        {
+            return redirect('contacts')->with('error', 'editing failed, please provide a department');
+        }else{
+            $task = DB::table('contacts')->where('id', $request->input('cid'))
+            ->update([
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
+                'info' => $request->input('info'),
+                'department' => $request->input('department')
+            ]);
+
+        }      
+            return redirect('contacts')->with('success', 'Professor edited successfully');
+        
+       
     }
 }
