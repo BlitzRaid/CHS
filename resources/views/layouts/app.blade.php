@@ -86,6 +86,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
+                                
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
@@ -106,6 +107,17 @@
                 </ul>
             </div>
         </nav>
+        <div>
+           @guest
+               @else
+               <div style="margin-left: 2.5%;">
+                    <a class="btn btn-danger mt-2" href="register" role="button"  v-pre>
+                        Register a new Admin
+                    </a>
+               </div>
+               
+           @endguest 
+        </div>
           
         <main class="py-4 home-content">
             @yield('content')
