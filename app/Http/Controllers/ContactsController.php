@@ -12,11 +12,13 @@ use App\Models\Contacts;
 
 class ContactsController extends Controller
 {
-    //this function is redundant at this point
+    
     public function search(Request $request)
     {
-        if(isset($_GET['searchname'])){
-            $search_text = $_GET['searchname'];
+        // dd($request->input('query'));
+
+        if(isset($_GET['query'])){
+            $search_text = $_GET['query'];
             $department = $request->department;
             if ($request->department != 'No Department'){
                 $contacts = DB::table('contacts')->where('name','like','%'.$search_text.'%')->where('department','like','%'.$department.'%')->orderBy('name', 'desc')->paginate(4);
