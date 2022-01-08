@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
+<head>
+  <title>Home</title>
+</head>
 <div class="container">
-    <div class="card text-center intro chsbackground shadow-lg">
+    <div class="card text-center intro homeElementBackground shadow-lg">
         <div class="card-header">
           
         </div>
@@ -17,7 +21,7 @@
     </div>
     <div class="row home-content">
         <div class="col-md-4">
-            <div class="card shadow-lg p-3 mb-5 chsbackground" style="width: 18rem;">
+            <div class="card shadow-lg p-3 mb-5 homeElementBackground" style="width: 18rem;">
                 <div class="card-body">
                   <h5 class="card-title">Timetable Generator</h5>
                   
@@ -31,7 +35,7 @@
               </div>
         </div>
         <div class="col-md-4">
-            <div class="card shadow-lg p-3 mb-5 chsbackground" style="width: 18rem;">
+            <div class="card shadow-lg p-3 mb-5 homeElementBackground" style="width: 18rem;">
                 <div class="card-body">
                   <h5 class="card-title">GPA calculator</h5>
                   <p class="card-text">This calculator will help you identify and calculate crucial metrics regarding your grades and GPA, 
@@ -42,7 +46,7 @@
               </div>
         </div>
         <div class="col-md-4">
-            <div class="card shadow-lg p-3 mb-5 chsbackground" style="width: 18rem;">
+            <div class="card shadow-lg p-3 mb-5 homeElementBackground" style="width: 18rem;">
                 <div class="card-body">
                   <h5 class="card-title">Contacts</h5>
                   <p class="card-text">Here you can find details about professor in our campus, emails, subjects they teach, and phone numbers if available.</p>

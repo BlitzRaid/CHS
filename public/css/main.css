@@ -1,0 +1,33 @@
+
+        .home-content{
+            padding-top: 20%;
+        }
+        .navcus{
+            font-family: 'Anton', sans-serif;
+            background-color: #3e8596;
+            width: 95%;
+            margin: auto;  
+            border: 2px solid; 
+            border-radius: 20px;
+            border-color: #246879;
+            
+        }
+        .chsbackground {
+            background-color:#eeeeee;
+        }
+        .homeElementBackground{
+            background-color:#9ad5e3 !important;
+        }
+        .intro{
+            background-repeat: no-repeat;
+            margin-top: 3%;
+        }
+        body{
+            background-color: #6ba3b0 !important;
+        }
+        .small-text{
+            font-size: 0.45em;
+        }
+        td{
+            margin: 100px;
+        }

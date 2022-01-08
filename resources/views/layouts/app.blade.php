@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>CHS</title>
+    
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -16,41 +16,25 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     
-
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/calcStyle.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/calcResponsive.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
     <style>
-        .home-content{
-            padding-top: 20%;
-        }
-        .navcus{
-            font-family: 'Anton', sans-serif;
-            background-color: #3e8596;
-            width: 95%;
-            margin: auto;  
-            border: 2px solid; 
-            border-radius: 20px;
-            border-color: #246879;
-            
-        }
-        .chsbackground {
-            background-color: #9ad5e3;
-        }
         .intro{
             background-image: url('{{ asset('images/wide.jpg') }}');
-            background-repeat: no-repeat;
-            margin-top: 3%;
-        }
-        body{
-            background-color: #6ba3b0;
-        }
-        .small-text{
-            font-size: 0.45em;
         }
     </style>
     
@@ -111,7 +95,7 @@
            @guest
                @else
                <div style="margin-left: 2.5%;">
-                    <a class="btn btn-danger mt-2" href="register" role="button"  v-pre>
+                    <a class="btn btn-danger mt-2" href="" role="button"  v-pre>
                         Register a new Admin
                     </a>
                </div>
@@ -123,6 +107,10 @@
             @yield('content')
         </main>
     </div>
+    <!-- FOOTER -->
+    
+    <!-- JavaScript -->
+    <script src="{{ asset('js/calcScript.js') }}"></script>
     
 </body>
 
