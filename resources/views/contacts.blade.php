@@ -2,6 +2,12 @@
 
 @section('content')
 
+<head>
+  <title>
+    Contacts
+  </title>
+</head>
+
 <div class="row justify-content-md-center">
   <div class="col-md-6">
     <h4>Search</h4>

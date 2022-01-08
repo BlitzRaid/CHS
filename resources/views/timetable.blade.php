@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    
+    <head>
+        <title>
+            CHS/TimeTable
+        </title>
+    </head>
 
 
     <div class="testtable">

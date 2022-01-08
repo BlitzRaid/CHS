@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>C/GPA Calculator</title>
+    <title>Calculator</title>
 </head>
 
 <!-- PAGE CONTENT -->
